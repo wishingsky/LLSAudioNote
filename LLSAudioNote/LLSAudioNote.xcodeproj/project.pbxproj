@@ -19,6 +19,7 @@
 		4B82E3731F23257D00DB7E54 /* LLSDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B82E3721F23257D00DB7E54 /* LLSDataManager.swift */; };
 		4B82E3761F23259D00DB7E54 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B82E3751F23259D00DB7E54 /* CoreData.framework */; };
 		4B82E3781F2325A300DB7E54 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B82E3771F2325A300DB7E54 /* AVFoundation.framework */; };
+		4BE6A1741F232D750002A8CA /* LLSRecorderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE6A1731F232D750002A8CA /* LLSRecorderViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		4B82E3721F23257D00DB7E54 /* LLSDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLSDataManager.swift; sourceTree = "<group>"; };
 		4B82E3751F23259D00DB7E54 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		4B82E3771F2325A300DB7E54 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		4BE6A1731F232D750002A8CA /* LLSRecorderViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLSRecorderViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 			children = (
 				4B82E3511F231B1C00DB7E54 /* AppDelegate.swift */,
 				4B82E3661F231C6C00DB7E54 /* LLSRecorderViewController.swift */,
+				4BE6A1731F232D750002A8CA /* LLSRecorderViewModel.swift */,
 				4B82E3681F231C8800DB7E54 /* LLSAudioListViewController.swift */,
 				4B82E3721F23257D00DB7E54 /* LLSDataManager.swift */,
 				4B82E3551F231B1C00DB7E54 /* Main.storyboard */,
@@ -170,6 +173,7 @@
 			files = (
 				4B82E35A1F231B1C00DB7E54 /* LLSAudioNote.xcdatamodeld in Sources */,
 				4B82E3731F23257D00DB7E54 /* LLSDataManager.swift in Sources */,
+				4BE6A1741F232D750002A8CA /* LLSRecorderViewModel.swift in Sources */,
 				4B82E3521F231B1C00DB7E54 /* AppDelegate.swift in Sources */,
 				4B82E3711F2324A800DB7E54 /* LLSAudio+CoreDataProperties.swift in Sources */,
 				4B82E3691F231C8800DB7E54 /* LLSAudioListViewController.swift in Sources */,
@@ -340,6 +344,7 @@
 				4B82E3651F231B1C00DB7E54 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

@@ -37,13 +37,59 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EzM-Xu-HWc">
-                                <rect key="frame" x="63" y="356" width="270" height="116"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TWp-DL-Luw">
+                                <rect key="frame" x="69" y="117" width="237" height="59"/>
+                                <color key="backgroundColor" red="0.28627450980000002" green="0.72156862749999995" blue="0.28627450980000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="59" id="HUS-aJ-tlD"/>
+                                    <constraint firstAttribute="width" constant="237" id="v1u-NT-Nxv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EzM-Xu-HWc">
+                                <rect key="frame" x="95.5" y="306" width="184" height="55"/>
+                                <color key="backgroundColor" red="0.28627450980000002" green="0.72156862749999995" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="184" id="BtF-Kl-hV0"/>
+                                    <constraint firstAttribute="height" constant="55" id="Q3O-f8-IUD"/>
+                                </constraints>
+                                <state key="normal" title="长按开始录音">
+                                    <color key="titleColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="touchDownRecordButton:" destination="LLA-Cf-I2l" eventType="touchDown" id="gkJ-4g-ITZ"/>
+                                    <action selector="touchUpRecordButton:" destination="LLA-Cf-I2l" eventType="touchUpInside" id="WvJ-9q-3b2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nm5-cB-E0v">
+                                <rect key="frame" x="104" y="422" width="167" height="46"/>
+                                <color key="backgroundColor" red="0.28627450980000002" green="0.72156862749999995" blue="0.28627450980000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="46" id="72j-z2-54V"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="167" id="Ejf-1v-1vr"/>
+                                    <constraint firstAttribute="height" constant="46" id="RhZ-xn-ILp"/>
+                                    <constraint firstAttribute="width" constant="167" id="eva-aZ-Tz6"/>
+                                </constraints>
+                                <state key="normal" title="播放录音">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapPlayButton:" destination="LLA-Cf-I2l" eventType="touchUpInside" id="WCi-F3-161"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nm5-cB-E0v" firstAttribute="top" secondItem="EzM-Xu-HWc" secondAttribute="bottom" constant="61" id="EX2-lU-aNX"/>
+                            <constraint firstItem="nm5-cB-E0v" firstAttribute="centerX" secondItem="9hO-Ej-O04" secondAttribute="centerX" id="GaC-5j-nMO"/>
+                            <constraint firstItem="EzM-Xu-HWc" firstAttribute="centerX" secondItem="9hO-Ej-O04" secondAttribute="centerX" id="TaP-7u-8fw"/>
+                            <constraint firstItem="nm5-cB-E0v" firstAttribute="centerX" secondItem="9hO-Ej-O04" secondAttribute="centerX" id="Vse-Pb-7WA"/>
+                            <constraint firstItem="TWp-DL-Luw" firstAttribute="centerX" secondItem="9hO-Ej-O04" secondAttribute="centerX" id="abb-b8-qgR"/>
+                            <constraint firstItem="EzM-Xu-HWc" firstAttribute="centerY" secondItem="9hO-Ej-O04" secondAttribute="centerY" id="jar-vf-UeR"/>
+                            <constraint firstItem="TWp-DL-Luw" firstAttribute="top" secondItem="Fd9-vH-xxQ" secondAttribute="bottom" constant="53" id="tOv-M6-En9"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="录音" id="G6B-5e-aBu">
                         <barButtonItem key="rightBarButtonItem" title="语音列表" style="plain" id="reH-4P-ohU">
@@ -57,6 +103,11 @@
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="playButton" destination="nm5-cB-E0v" id="NjH-Cd-ycB"/>
+                        <outlet property="recordButton" destination="EzM-Xu-HWc" id="evc-Rn-Nwa"/>
+                        <outlet property="timeLabel" destination="TWp-DL-Luw" id="K8a-bY-8vD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vcg-17-TkD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
