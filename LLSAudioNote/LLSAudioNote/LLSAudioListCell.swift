@@ -8,11 +8,6 @@
 
 import UIKit
 
-enum PlayStatus {
-    case play
-    case stop
-}
-
 class LLSAudioListCell: UITableViewCell {
 
     var nameLabel: UILabel!

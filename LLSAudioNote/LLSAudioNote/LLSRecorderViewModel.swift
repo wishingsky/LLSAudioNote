@@ -9,6 +9,11 @@
 import UIKit
 import AVFoundation
 
+public enum PlayStatus {
+    case play
+    case stop
+}
+
 public class LLSRecorderViewModel: NSObject {
     fileprivate var recorder: AVAudioRecorder?
     fileprivate var player:AVAudioPlayer?
@@ -18,12 +23,12 @@ public class LLSRecorderViewModel: NSObject {
     private var format = DateFormatter()
     
     public var updateMeter: ((String) -> Void)?
-    public var showPermissionAlert: (() -> Void)?
     public var showPlayButton: ((Bool) -> Void)?
+    public var updatePlayButtonStatus: ((PlayStatus) -> Void)?
     
     override public init() {
         super.init()
-        format.dateFormat="yyyy-MM-dd-HH-mm-ss"
+        format.dateFormat="yyyy-MM-dd HH:mm:ss"
     }
     
     deinit {
@@ -76,6 +81,11 @@ public class LLSRecorderViewModel: NSObject {
      *
      */
     public func playAudio() {
+        if let player = player, player.isPlaying {
+            player.stop()
+            updatePlayButtonStatus?(.stop)
+            return
+        }
         var url: URL = audioFileURL
         if let recorder = recorder {
             url = recorder.url
@@ -88,6 +98,7 @@ public class LLSRecorderViewModel: NSObject {
             player?.prepareToPlay()
             player?.volume = 1.0
             player?.play()
+            updatePlayButtonStatus?(.play)
         } catch {
             player = nil
             print(error.localizedDescription)

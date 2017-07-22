@@ -34,22 +34,12 @@ class LLSRecorderViewController: UIViewController {
             self?.timeLabel.text = timeString
         }
         
-        viewModel.showPermissionAlert = { [weak self] in
-            let alert = UIAlertController(title: "没有麦克风权限", message: "请去设置中找到该应用来打开麦克风权限", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "确定", style: .cancel, handler: nil))
-            self?.present(alert, animated: true, completion: nil)
+        viewModel.showPlayButton = { [weak self] show in
+            self?.showPlayButton(show: show)
         }
         
-        viewModel.showPlayButton = { [weak self] show in
-            if show {
-                UIView.animate(withDuration: 0.3, animations: {
-                    self?.playButton.alpha = 1.0
-                })
-            } else {
-                UIView.animate(withDuration: 0.3, animations: {
-                    self?.playButton.alpha = 0.0
-                })
-            }
+        viewModel.updatePlayButtonStatus = { [weak self] status in
+           self?.updatePlayButton(status: status)
         }
     }
     
@@ -63,6 +53,40 @@ class LLSRecorderViewController: UIViewController {
     
     @IBAction func tapPlayButton(_ sender: Any) {
         viewModel.playAudio()
+    }
+    
+    /**
+     *  显示播放按钮
+     *
+     *  @param show 显示或隐藏
+     *
+     */
+    private func showPlayButton(show: Bool) {
+        if show {
+            UIView.animate(withDuration: 0.3, animations: {
+                self.playButton.alpha = 1.0
+                self.updatePlayButton(status: .stop)
+            })
+        } else {
+            UIView.animate(withDuration: 0.3, animations: {
+                self.playButton.alpha = 0.0
+            })
+        }
+    }
+    
+    /**
+     *  更新播放按钮状态
+     *
+     *  @param status 播放状态
+     *
+     */
+    private func updatePlayButton(status: PlayStatus) {
+        switch status {
+        case .play:
+            playButton.setTitle("停止播放", for: .normal)
+        case .stop:
+            playButton.setTitle("开始播放", for: .normal)
+        }
     }
 }
 

@@ -13,7 +13,7 @@ class LLSAudioListViewModel: NSObject {
     var audioArray = [LLSAudio]()
     var playStatusArray = [PlayStatus]()
     
-    var player:AVAudioPlayer!
+    var player: AVAudioPlayer?
     
     var reload: (() -> Void)?
     
@@ -42,13 +42,18 @@ class LLSAudioListViewModel: NSObject {
      *
      */
     func play(_ index: Int) {
+        if let player = player, player.isPlaying {
+            player.stop()
+            updateStatus(index: index)
+            return
+        }
         guard let url = audioArray[index].url else { return }
         do {
             self.player = try AVAudioPlayer(contentsOf: URL(string: url)!)
-            player.prepareToPlay()
-            player.delegate = self
-            player.volume = 1.0
-            player.play()
+            player?.prepareToPlay()
+            player?.delegate = self
+            player?.volume = 1.0
+            player?.play()
             updateStatus(index: index)
         } catch {
             self.player = nil
