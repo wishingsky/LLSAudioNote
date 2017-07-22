@@ -170,11 +170,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LLSAudioNote/LLSRecorderViewModel.swift"
-            timestampString = "522417568.08669"
+            timestampString = "522417690.102104"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
             landmarkName = "canRecord()"
             landmarkType = "7">
             <Locations>

@@ -24,7 +24,7 @@ class LLSAudioListCell: UITableViewCell {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        nameLabel = UILabel(frame: CGRect(x: 20, y: 0, width: 230, height: 60))
+        nameLabel = UILabel(frame: CGRect(x: 20, y: 0, width: 250, height: 60))
         addSubview(nameLabel)
         playButton = UIButton(frame: CGRect(x: self.frame.width - 60, y: 10, width: 50, height: 40))
         playButton.setTitleColor(UIColor.blue, for: .normal)

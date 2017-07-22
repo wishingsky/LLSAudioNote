@@ -14,7 +14,6 @@ public class LLSRecorderViewModel: NSObject {
     fileprivate var player:AVAudioPlayer?
     fileprivate var meterTimer:Timer?
     fileprivate var audioFileURL:URL!
-    fileprivate var number: Int = 0
     
     private var format = DateFormatter()
     
@@ -103,7 +102,7 @@ public class LLSRecorderViewModel: NSObject {
      *
      */
     private func setupRecorder() {
-        let currentFileName = "record-\(format.string(from: Date())).m4a"
+        let currentFileName = "\(format.string(from: Date())).m4a"
         print(currentFileName)
         
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
@@ -211,8 +210,7 @@ extension LLSRecorderViewModel : AVAudioRecorderDelegate {
     public func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder,
                                          successfully flag: Bool) {
         print("finished recording \(flag)")
-        number += 1
-        let name = "Your record \(self.number)"
+        let name = audioFileURL.lastPathComponent
         LLSDataManager.shared.save(name: name, url: audioFileURL.absoluteString)
         self.showPlayButton?(true)
         self.recorder = nil
