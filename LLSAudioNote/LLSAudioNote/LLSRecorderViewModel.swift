@@ -45,7 +45,7 @@ public class LLSRecorderViewModel: NSObject {
         showPlayButton?(false)
         
         guard let recorder = recorder else {
-            recordWithPermission(true)
+            record(true)
             return
         }
         
@@ -53,7 +53,7 @@ public class LLSRecorderViewModel: NSObject {
             recorder.pause()
         } else {
             print("recording")
-            recordWithPermission(false)
+            record(false)
         }
     }
     
@@ -132,34 +132,40 @@ public class LLSRecorderViewModel: NSObject {
     }
     
     /**
-     *  请求麦克风权限，成功则开始录制，否则弹窗提示
+     *  请求麦克风权限，判断是否可以进行录制
+     *
+     *  @return 是否需有权限录制
+     *
+     */
+    private func canRecord() -> Bool {
+        var bCanRecord = false
+        AVAudioSession.sharedInstance().requestRecordPermission() { granted in
+            bCanRecord = granted
+        }
+        return bCanRecord
+    }
+    
+    /**
+     *  录制
      *
      *  @param setup 是否需要创建录音器
      *
      */
-    private func recordWithPermission(_ setup:Bool) {
-        AVAudioSession.sharedInstance().requestRecordPermission() {
-            [unowned self] granted in
-            if granted {
-                DispatchQueue.main.async {
-                    print("Permission to record granted")
-                    self.setSessionPlayAndRecord()
-                    if setup {
-                        self.setupRecorder()
-                    }
-                    self.recorder?.record()
-                    self.meterTimer = Timer.scheduledTimer(timeInterval: 0.1,
-                                                           target:self,
-                                                           selector:#selector(self.updateRecorderMeter(_:)),
-                                                           userInfo:nil,
-                                                           repeats:true)
+    private func record(_ setup:Bool) {
+        if canRecord() {
+            DispatchQueue.main.async {
+                print("Permission to record granted")
+                self.setSessionPlayAndRecord()
+                if setup {
+                    self.setupRecorder()
                 }
-            } else {
-                print("Permission to record not granted")
+                self.recorder?.record()
+                self.meterTimer = Timer.scheduledTimer(timeInterval: 0.1,
+                                                       target:self,
+                                                       selector:#selector(LLSRecorderViewModel.updateRecorderMeter(_:)),
+                                                       userInfo:nil,
+                                                       repeats:true)
             }
-        }
-        if AVAudioSession.sharedInstance().recordPermission() == .denied {
-            showPermissionAlert?()
         }
     }
     
