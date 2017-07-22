@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  LLSRecorderViewController.swift
 //  LLSAudioNote
 //
 //  Created by weixiaoyun on 2017/7/22.
@@ -8,11 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class LLSRecorderViewController: UIViewController {
 
     override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        super.viewDidLoad()    
+
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,4 +23,3 @@ class ViewController: UIViewController {
 
 
 }
-

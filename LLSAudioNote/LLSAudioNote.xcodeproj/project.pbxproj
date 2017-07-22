@@ -8,22 +8,34 @@
 
 /* Begin PBXBuildFile section */
 		4B82E3521F231B1C00DB7E54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B82E3511F231B1C00DB7E54 /* AppDelegate.swift */; };
-		4B82E3541F231B1C00DB7E54 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B82E3531F231B1C00DB7E54 /* ViewController.swift */; };
 		4B82E3571F231B1C00DB7E54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B82E3551F231B1C00DB7E54 /* Main.storyboard */; };
 		4B82E35A1F231B1C00DB7E54 /* LLSAudioNote.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4B82E3581F231B1C00DB7E54 /* LLSAudioNote.xcdatamodeld */; };
 		4B82E35C1F231B1C00DB7E54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B82E35B1F231B1C00DB7E54 /* Assets.xcassets */; };
 		4B82E35F1F231B1C00DB7E54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B82E35D1F231B1C00DB7E54 /* LaunchScreen.storyboard */; };
+		4B82E3671F231C6C00DB7E54 /* LLSRecorderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B82E3661F231C6C00DB7E54 /* LLSRecorderViewController.swift */; };
+		4B82E3691F231C8800DB7E54 /* LLSAudioListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B82E3681F231C8800DB7E54 /* LLSAudioListViewController.swift */; };
+		4B82E3701F2324A800DB7E54 /* LLSAudio+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B82E36E1F2324A800DB7E54 /* LLSAudio+CoreDataClass.swift */; };
+		4B82E3711F2324A800DB7E54 /* LLSAudio+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B82E36F1F2324A800DB7E54 /* LLSAudio+CoreDataProperties.swift */; };
+		4B82E3731F23257D00DB7E54 /* LLSDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B82E3721F23257D00DB7E54 /* LLSDataManager.swift */; };
+		4B82E3761F23259D00DB7E54 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B82E3751F23259D00DB7E54 /* CoreData.framework */; };
+		4B82E3781F2325A300DB7E54 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B82E3771F2325A300DB7E54 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4B82E34E1F231B1C00DB7E54 /* LLSAudioNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LLSAudioNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B82E3511F231B1C00DB7E54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4B82E3531F231B1C00DB7E54 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4B82E3561F231B1C00DB7E54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4B82E3591F231B1C00DB7E54 /* LLSAudioNote.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LLSAudioNote.xcdatamodel; sourceTree = "<group>"; };
 		4B82E35B1F231B1C00DB7E54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4B82E35E1F231B1C00DB7E54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4B82E3601F231B1C00DB7E54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4B82E3661F231C6C00DB7E54 /* LLSRecorderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLSRecorderViewController.swift; sourceTree = "<group>"; };
+		4B82E3681F231C8800DB7E54 /* LLSAudioListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLSAudioListViewController.swift; sourceTree = "<group>"; };
+		4B82E36E1F2324A800DB7E54 /* LLSAudio+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "LLSAudio+CoreDataClass.swift"; path = "LLSAudioNote/LLSAudio+CoreDataClass.swift"; sourceTree = "<group>"; };
+		4B82E36F1F2324A800DB7E54 /* LLSAudio+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "LLSAudio+CoreDataProperties.swift"; path = "LLSAudioNote/LLSAudio+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		4B82E3721F23257D00DB7E54 /* LLSDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLSDataManager.swift; sourceTree = "<group>"; };
+		4B82E3751F23259D00DB7E54 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		4B82E3771F2325A300DB7E54 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +43,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B82E3781F2325A300DB7E54 /* AVFoundation.framework in Frameworks */,
+				4B82E3761F23259D00DB7E54 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,8 +54,11 @@
 		4B82E3451F231B1C00DB7E54 = {
 			isa = PBXGroup;
 			children = (
+				4B82E36E1F2324A800DB7E54 /* LLSAudio+CoreDataClass.swift */,
+				4B82E36F1F2324A800DB7E54 /* LLSAudio+CoreDataProperties.swift */,
 				4B82E3501F231B1C00DB7E54 /* LLSAudioNote */,
 				4B82E34F1F231B1C00DB7E54 /* Products */,
+				4B82E3741F23259C00DB7E54 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,7 +74,9 @@
 			isa = PBXGroup;
 			children = (
 				4B82E3511F231B1C00DB7E54 /* AppDelegate.swift */,
-				4B82E3531F231B1C00DB7E54 /* ViewController.swift */,
+				4B82E3661F231C6C00DB7E54 /* LLSRecorderViewController.swift */,
+				4B82E3681F231C8800DB7E54 /* LLSAudioListViewController.swift */,
+				4B82E3721F23257D00DB7E54 /* LLSDataManager.swift */,
 				4B82E3551F231B1C00DB7E54 /* Main.storyboard */,
 				4B82E35B1F231B1C00DB7E54 /* Assets.xcassets */,
 				4B82E35D1F231B1C00DB7E54 /* LaunchScreen.storyboard */,
@@ -65,6 +84,15 @@
 				4B82E3581F231B1C00DB7E54 /* LLSAudioNote.xcdatamodeld */,
 			);
 			path = LLSAudioNote;
+			sourceTree = "<group>";
+		};
+		4B82E3741F23259C00DB7E54 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4B82E3771F2325A300DB7E54 /* AVFoundation.framework */,
+				4B82E3751F23259D00DB7E54 /* CoreData.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,9 +168,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B82E3541F231B1C00DB7E54 /* ViewController.swift in Sources */,
 				4B82E35A1F231B1C00DB7E54 /* LLSAudioNote.xcdatamodeld in Sources */,
+				4B82E3731F23257D00DB7E54 /* LLSDataManager.swift in Sources */,
 				4B82E3521F231B1C00DB7E54 /* AppDelegate.swift in Sources */,
+				4B82E3711F2324A800DB7E54 /* LLSAudio+CoreDataProperties.swift in Sources */,
+				4B82E3691F231C8800DB7E54 /* LLSAudioListViewController.swift in Sources */,
+				4B82E3701F2324A800DB7E54 /* LLSAudio+CoreDataClass.swift in Sources */,
+				4B82E3671F231C6C00DB7E54 /* LLSRecorderViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
